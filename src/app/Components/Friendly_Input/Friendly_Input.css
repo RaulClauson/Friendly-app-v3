@@ -26,7 +26,7 @@
     justify-content: flex-end; /* Keep messages at the bottom */
     overflow-y: auto;
     max-height: calc(100vh - 150px); /* Restrict max height */
-    background: linear-gradient(180deg, rgba(241, 241, 241, 0) 0%, #f1f1f17e 100%);
+    background: linear-gradient(180deg, rgba(241, 241, 241, 0) 30%, #f1f1f17e 100%);
 }
 .Friendly_Input_dentro > * {
     pointer-events: auto;
@@ -77,6 +77,7 @@
   pointer-events: none;
 }
 #Friendly_Input label button{
+    min-width: 48px;
     width: 48px;
     height: 48px;
      
@@ -146,10 +147,11 @@
 /* ============================BOX CHAT============================ */
 
 .box_chat_messages{
-  width: clamp(0px, 1028px, 100%);
+  width: 100%;
   padding: 0px 1.3vw;
   height: calc(100vh - 150px); /* Adjust based on viewport */
   display: flex;
+  align-items: center;
   flex-direction: column-reverse; /* Reverse the column */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Hide horizontal overflow */
@@ -182,6 +184,7 @@
 
 
 .box_chat_messages_dentro{
+  width: clamp(0px, 1028px, 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Align messages to the bottom */
@@ -211,10 +214,12 @@
     margin: 0;
      
     color: rgba(0, 0, 0, 0.7);
-    background: rgba(255, 255, 255);
+    background: rgba(255, 255, 255, 1);
+    border: 2px solid #fff;
     border-radius: 30px 30px 10px 30px;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
+    box-shadow: 0px 10px 100px #0000001a;
   }
   .message p{
     margin: 0;
@@ -237,7 +242,9 @@
     margin: 0;
      
     color: rgba(0, 0, 0, 0.8);
-    background: rgba(255, 255, 255);
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #fff;
+    box-shadow: 0px 10px 100px #0000001a;
   }
   .message_ai p{
     margin: 0;
@@ -255,7 +262,7 @@
     justify-content: flex-end;
     gap: 6px;
     flex: none;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     -webkit-animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   }
@@ -266,7 +273,7 @@
     justify-content: flex-start;
     gap: 6px;
     flex: none;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     -webkit-animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   }

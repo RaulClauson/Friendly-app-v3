@@ -3,9 +3,10 @@ import Friendly_Input from "./Components/Friendly_Input/Friendly_Input";
 import Cabecalho from "./Components/Cabecalho/Cabecalho";
 import styles from "./page.module.css";
 import Friendly_Olhos from "./Components/Friendly_Olhos/Friendly_Olhos";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Home() {
+  
   const [emocao, setEmocao] = useState<number>(0); // Estado para a emoção
   const olhosRef = useRef<{ handleClick: () => void }>(null); // Referência para Friendly_Olhos
 
