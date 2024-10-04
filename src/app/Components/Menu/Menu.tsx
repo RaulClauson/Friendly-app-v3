@@ -1,11 +1,9 @@
 "use client";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { BiUniversalAccess } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdAccountCircle, MdOutlineDarkMode, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { RiQuestionLine } from "react-icons/ri";
-import { TbSettings } from "react-icons/tb";
+import { FaYoutube } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import Logo_icon from "../../Assets/Logo_icon/Logo_icon";
 import './Menu.css';
 
@@ -24,9 +22,6 @@ const Menu = () => {
     document.getElementById("header_open")?.classList.toggle("header_closed2")
     document.getElementById("sombra_menu")?.classList.toggle("sombra_menu_open")
     document.getElementById("btn_menu")?.classList.toggle("btn_menu_closed")
-  }
-  const acessibilidade = () => {
-    document.getElementById("acessibilidade")?.classList.toggle("closed")
   }
   //DEIXA CLASSE FECHADA COMO PADRÃO QUANDO TIVER MOBILE
   useEffect(() => {
@@ -67,34 +62,6 @@ const Menu = () => {
     }
   }, []);
 
-  // Estado para armazenar o modo atual (light ou dark)
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Função para trocar o modo
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem('darkMode', (!darkMode).toString());
-    document.documentElement.classList.toggle('dark-mode');
-  };
-
-  // Verificar se o usuário já havia escolhido o modo escuro anteriormente
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode === 'true') {
-      setDarkMode(true);
-      document.documentElement.classList.add('dark-mode');
-    }
-  }, []);
-
-  // Verificar se o sistema do usuário está em modo escuro e aplicar automaticamente
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDarkMode && !localStorage.getItem('darkMode')) {
-      setDarkMode(true);
-      document.documentElement.classList.add('dark-mode');
-    }
-  }, []);
-
   return (
     <>
       <div id='header_open'></div>
@@ -109,7 +76,9 @@ const Menu = () => {
             </div>
           </div>
           <ul>
-
+            <a href=""><FaGithub />Github</a>
+            <a href=""><FaYoutube />Youtube</a>
+            <a href="">friendly@gmail.com</a>
           </ul>
         </nav>
       </header>

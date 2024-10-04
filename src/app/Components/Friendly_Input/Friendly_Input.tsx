@@ -47,7 +47,7 @@ const Friendly_Input = ({ onChange, onSend }: { onChange: (newEmotion: number) =
   
     // Request to the emotion API
     const emotionResponse = await fetch('/api/emocao', {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -69,7 +69,7 @@ const Friendly_Input = ({ onChange, onSend }: { onChange: (newEmotion: number) =
   
     // Request to the back-end sending the user's message and message history
     const response = await fetch('/api/openai', {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
