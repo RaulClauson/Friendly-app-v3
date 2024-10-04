@@ -1,0 +1,413 @@
+/* ================================================================ */
+/* HEADER NAV */
+/* ================================================================ */
+#header_open{
+    position: relative;
+    width: clamp(320px, 320px, 30%);
+    height: 100vh;
+    display: flex;
+    transition: 0.2s ease;
+    flex-shrink: 0;
+    z-index: -1;
+    background-color: transparent !important;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: clamp(320px, 320px, 30%);
+    height: 100dvh;
+     
+    background: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: 0.2s ease;
+    flex-shrink: 0;
+    z-index: 3;
+    opacity: 0;
+    animation: header 0.8s 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+header p{
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+header nav div{
+    width: 100%;
+}
+
+/* ================================================================ */
+/* BOTÃO ATIVA MENU */
+/* ================================================================ */
+.btn_menu{
+    position: fixed;
+    left: 320px;
+    width: 55px;
+    height: 55px;
+    max-width: 70%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background: rgb(255, 255, 255, 0.7);   
+    color: rgba(0, 0, 0, 0.80);
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    transition: 0.2s ease;
+    z-index: 5;
+    margin-left: 4vw;
+    top: 2.5vw;
+    opacity: 0;
+    animation: header 0.8s 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+}
+.btn_menu:hover{
+    color: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.20);
+}
+.btn_menu_closed{
+    left: 0px !important;
+}
+@keyframes header {
+    0%{
+      opacity: 0;
+      transform: translateX(clamp(-90px, -120px, -13%));
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(clamp(0));
+    }
+  }
+/* ================================================================ */
+/* LINKS MENU */
+/* ================================================================ */
+header nav .links{
+    padding: 0 9px;
+    margin-top: 2em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+header nav .links a{
+    width: 100%;
+    border-radius: 8px;   
+    padding: 18px 21px;
+    box-sizing: border-box;
+    background-color: transparent;
+    cursor: pointer;
+
+    font-family: Newake;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-align: left;
+     
+    color: #000000;
+    fill: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    opacity: 0.7;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+header nav .links a:hover{
+    background-color: rgba(0, 0, 0, 0.10);
+    color: #000000;
+    fill: #000000;
+    opacity: 1;
+}
+header nav .links a p{
+    transform: translateY(2.3px);
+}
+.ativo{
+    background-color: rgba(0, 0, 0, 0.10) !important;
+    color: #000000 !important;
+    fill: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* ================================================================ */
+/* LINKS CONFIGS */
+/* ================================================================ */
+header nav ul{
+    width: 100%;
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+header nav ul button{
+    width: 100%;
+    cursor: pointer;
+    font-family: Sequel Sans;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 11px;
+    letter-spacing: 0.02em;
+    text-align: left;
+     
+    color: #000000;
+    fill: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    opacity: 0.6;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    transition: 0.2s ease;
+    background-color: transparent;
+    border: none;
+}
+header nav ul button:hover{
+    background-color: #00000015;
+    opacity: 0.9;
+}
+header nav ul a{
+    width: 100%;
+    cursor: pointer;
+    font-family: Sequel Sans;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 11px;
+    letter-spacing: 0.02em;
+    text-align: left;
+     
+    color: #000000;
+    fill: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    opacity: 0.6;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    transition: 0.2s ease;
+}
+header nav ul a:hover{
+    background-color: #00000015;
+    opacity: 0.9;
+}
+
+/* ================================================================ */
+/* PERFIL */
+/* ================================================================ */
+header #perfil{
+    width: 100%;
+    padding: 28px 43px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.6);
+    transition: 0.2s ease;
+}
+header #perfil:hover{
+    background: rgba(0, 0, 0, 0.10);
+    color: #000000;
+}
+header #perfil div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-family: Sequel Sans;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+/* ================================================================ */
+/* HEADER CLOSED */
+/* ================================================================ */
+.header_closed{
+    left: -320px;
+}
+.header_closed2{
+    width: 0px !important;
+}
+
+/* ================================================================ */
+/* DARK MODE */
+/* ================================================================ */
+
+.dark-mode .btn_menu{
+    background-color: #00000018;
+    color: #000000;
+    fill: #000000;
+    opacity: 0.9;
+}
+.dark-mode .btn_menu:hover{
+    background-color: #00000025;
+    color: #000000;
+    fill: #000000;
+}
+.dark-mode .header_closed .btn_menu{
+    background-color: transparent;    
+}
+.dark-mode header nav .links a:hover{
+    background-color: #00000023;
+    color: #000000;
+    fill: #000000;
+}
+.dark-mode .ativo{
+    background-color: #00000023 !important;
+    color: #000000 !important;
+    fill: #000000 !important;
+}
+.dark-mode header nav ul li:hover{
+    background-color: #00000023;
+    opacity: 1;
+}
+.dark-mode header nav ul a:hover{
+    background-color: #00000023;
+    opacity: 1;
+}
+.dark-mode header #perfil{
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.6);
+}
+.dark-mode header #perfil:hover{
+    background: rgba(0, 0, 0, 0.2);
+    color: #000000c7;
+}
+
+
+
+/* ================================================================ */
+/* MOBILE */
+/* ================================================================ */
+@media (max-width: 888px) {
+    #header_open{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+    header{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+    .header_closed{
+        position: fixed !important;
+        left: -320px;
+        border-radius: 12px;
+    }
+    .header_closed nav{
+        padding: 0;
+    }
+    .header_closed .btn_menu{
+        width: 55px;
+        height: 55px;
+        border-radius: 0;
+    }
+    .header_closed nav div .links{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .header_closed nav ul{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .header_closed #perfil{
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+    .header_closed .btn_menu:hover{
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.70);
+    }
+    .dark-mode .header_closed{
+        background-color: #00000015;
+    }
+    .dark-mode .header_closed .btn_menu:hover{
+        background-color: transparent;
+    }
+    .header_closed nav div{
+        height: 0;
+    }
+    .btn_menu{
+        top: 17px;
+        right: 24px;
+        margin-right: 24px;
+    }
+    .btn_menu:hover{
+        background: #fff;
+        color: rgba(0, 0, 0, 0.80);
+    }
+    .btn_menu_closed{
+        left: 0px !important;
+        margin-left:24px !important;
+    }
+}
+
+
+
+/* ================================================================ */
+/* SOMBRA MENU MOBILE */
+/* ================================================================ */
+
+.sombra_menu_open{
+    display: none;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    animation: sombra_menu_open 0.2s ease forwards;
+}
+@keyframes sombra_menu_open {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media (max-width: 888px) {
+    .sombra_menu_open{
+        display: block !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.15);
+    }
+}
+.sombra_menu_closed{
+    display: none;
+    z-index: 2;
+}

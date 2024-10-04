@@ -1,0 +1,51 @@
+/* components/Loading/Loading.module.css */
+.aa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100dvw;
+}
+.aa div{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: loading 4s infinite;
+  background-color: #000;
+}
+@keyframes loading {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.aa img{
+  width: 400px;
+}
+.aa p{
+  font-family: Sequel Sans Bold;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 5vh;
+  text-align: center;
+  position: absolute;
+  bottom: 5vh;
+  opacity: 0;
+  animation: loading2 0.5s 1s ease forwards;
+}
+@keyframes loading2 {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.4;
+  }
+}
