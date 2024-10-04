@@ -109,16 +109,9 @@ const Menu = () => {
             </div>
           </div>
           <ul>
-            <Link href="/Ajuda" tabIndex={1} className={activeLink === '/Ajuda' ? 'ativo' : ''} onClick={() => { handleLinkClick('/'); if (window.matchMedia("(max-width: 888px)").matches) { menu_hide(); } }}><RiQuestionLine size={24} /><p>Ajuda</p></Link>
-            <button type='button' onClick={acessibilidade} tabIndex={1}><BiUniversalAccess size={24} /><p>Acessibilidade</p></button>
-            <button type='button' onClick={toggleDarkMode} tabIndex={1}><MdOutlineDarkMode size={24} /><p>Dark Mode</p></button>
-            <Link href="/Configuracoes" tabIndex={1} className={activeLink === '/Configuracoes' ? 'ativo' : ''} onClick={() => { handleLinkClick('/'); if (window.matchMedia("(max-width: 888px)").matches) { menu_hide(); } }}><TbSettings size={24} /><p>Configurações</p></Link>
+
           </ul>
         </nav>
-        <Link href="/Perfil" tabIndex={1} className={activeLink === '/Perfil' ? 'ativo' : ''} onClick={() => { handleLinkClick('/'); if (window.matchMedia("(max-width: 888px)").matches) { menu_hide(); } }} id='perfil'>
-          <div><MdAccountCircle size={30} /><p>Perfil</p></div>
-          <p><MdOutlineKeyboardArrowRight size={18} /></p>
-        </Link>
       </header>
       <div className='sombra_menu_closed' id='sombra_menu' onClick={menu_hide}></div>
     </>

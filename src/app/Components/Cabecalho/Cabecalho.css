@@ -110,6 +110,12 @@
     background: rgb(255, 255, 255, 0.7) !important;   
     color: rgba(0, 0, 0, 0.7) !important;
 }
+.cabecalho_ativa{
+    background-color: #fff !important;
+}
+.cabecalho_ativa:hover{
+    background-color: #fff !important;
+}
 .cabecalho_ativa div{
     height: auto !important;
     padding: 15px 23px 15px 28px;
