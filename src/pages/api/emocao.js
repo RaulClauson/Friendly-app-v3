@@ -1,6 +1,3 @@
-// pages/api/emocao.js
-
-import { NextApiRequest, NextApiResponse } from 'next';
 import { OpenAI } from 'openai';
 
 const openai = new OpenAI({
@@ -34,6 +31,7 @@ async function detectarEmocao(mensagem) {
   return "Neutro";
 }
 
+
 // Função para chamar o modelo GPT para detectar a emoção na mensagem
 async function chatGPT(mensagem) {
   const prompt = `
@@ -61,8 +59,9 @@ async function chatGPT(mensagem) {
   }
 }
 
+// Função handler da API para lidar com requisições POST
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     const { mensagem } = req.body;
 
     if (!mensagem || typeof mensagem !== 'string') {
@@ -77,7 +76,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'Erro ao processar a solicitação' });
     }
   } else {
-    res.setHeader('Allow', ['POST']);
+    res.setHeader('Allow', ['GET']);
     res.status(405).end(`Método ${req.method} não permitido`);
   }
 }

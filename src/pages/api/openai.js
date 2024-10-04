@@ -13,7 +13,7 @@ function getSystemMessage() {
 }
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     const { userMessage, messageHistory } = req.body;
 
     if (!userMessage) {
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Erro ao processar a solicitação.' });
     }
   } else {
-    res.setHeader('Allow', ['POST']);
+    res.setHeader('Allow', ['GET']);
     return res.status(405).end(`Método ${req.method} não permitido.`);
   }
 }
